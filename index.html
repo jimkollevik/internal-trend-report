@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trends Digest</title>
+
+	<!-- google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:600" rel="stylesheet">
+	<!-- default css -->
+	<link rel="stylesheet" type="text/css" href="assetts/css/default.css">
+	<!-- scripts jquery -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<!-- text effect script -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+
+</script>
+
+<div class="container">
+	<div class="row">
+		<div class="col first-col">
+			<h1 class="keyword1">
+			
+			</h1>
+		</div><!-- end col -->
+		<div class="col second-col">
+			<h1 class="keyword2">
+			
+			</h1>
+		</div><!-- end col -->
+	</div><!-- end row -->
+	<div class="row">
+		<div class="col third-col">
+			<h1 class="keyword3">
+			
+			</h1>
+		</div><!-- end col -->
+		<div class="col fourth-col">
+			<h1 class="keyword4">
+			
+			</h1>
+		</div><!-- end col -->
+	</div><!-- end row -->
+</div><!-- end container -->
+
+<!-- script for moving letters -->
+<script type="text/javascript">
+
+$(document).ready(function() {
+	//update every 5 second
+	window.setInterval(function() {
+	//declare color array
+	var colors = ["#4A75E6","#EA2533","#FEBC1F","#4470E6","#08AF22"];
+	var coulors = ["#4A75E6","#EA2533","#FEBC1F","#4470E6","#08AF22"];
+	var Colors = ["#4A75E6","#EA2533","#FEBC1F","#4470E6","#08AF22"];
+	var colOrs = ["#4A75E6","#EA2533","#FEBC1F","#4470E6","#08AF22"];
+	var randomColor = colors[Math.floor(Math.random() * colors.length)];
+	var randomCol = coulors[Math.floor(Math.random() * coulors.length)];
+	var randColor = Colors[Math.floor(Math.random() * Colors.length)];
+	var Randcolor = colOrs[Math.floor(Math.random() * colOrs.length)];
+	//set random color to col
+	$(".first-col").css("background-color", randomColor);
+	$(".second-col").css("background-color", randomCol);
+	$(".third-col").css("background-color", randColor);
+	$(".fourth-col").css("background-color", Randcolor)
+
+var showText = function (target, message, index, interval) {   
+  if (index < message.length) {
+    $(target).append(message[index++]);
+    setTimeout(function () { showText(target, message, index, interval); }, interval);
+  }
+}
+
+//make api call here
+var uri = "http://echo.jsontest.com/key/value/one/two";
+$.getJSON(uri, function(data) {
+	var keyword1 = data.one;
+	var keyword2 = data.key;
+
+$(function () {
+	$(".keyword1").empty()
+	$(".keyword2").empty()
+	//$(".keyword3").empty()
+	//$(".keyword4").empty()
+	showText(".keyword1", keyword1, 0, 200);
+	showText(".keyword2", keyword2, 0, 200);
+	//showText(".keyword3", keyword3, 0, 200);
+	//showText(".keyword4", keyword4, 0, 200);
+
+});
+
+})
+}, 5000);//end timer
+})//end of script
+</script>
+
+</body>
+</html>
