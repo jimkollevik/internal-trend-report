@@ -9,14 +9,8 @@
 	<link rel="stylesheet" type="text/css" href="assetts/css/default.css">
 	<!-- scripts jquery -->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<!-- text effect script -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </head>
 <body>
-
-<script type="text/javascript">
-
-</script>
 
 <div class="container">
 	<div class="row">
@@ -51,7 +45,7 @@
 $(document).ready(function() {
 	//update every 5 second
 	window.setInterval(function() {
-	//declare color array
+	//declare color array and update randomly - Google Colors, you can change them
 	var colors = ["#4A75E6","#EA2533","#FEBC1F","#4470E6","#08AF22"];
 	var coulors = ["#4A75E6","#EA2533","#FEBC1F","#4470E6","#08AF22"];
 	var Colors = ["#4A75E6","#EA2533","#FEBC1F","#4470E6","#08AF22"];
@@ -66,31 +60,30 @@ $(document).ready(function() {
 	$(".third-col").css("background-color", randColor);
 	$(".fourth-col").css("background-color", Randcolor)
 
-var showText = function (target, message, index, interval) {   
-  if (index < message.length) {
-    $(target).append(message[index++]);
-    setTimeout(function () { showText(target, message, index, interval); }, interval);
-  }
-}
+	var showText = function (target, message, index, interval) {   
+  		if (index < message.length) {
+    		$(target).append(message[index++]);
+    		setTimeout(function () { showText(target, message, index, interval); }, interval);
+  		}
+	}
 
-//make api call here
-var uri = "http://echo.jsontest.com/key/value/one/two";
-$.getJSON(uri, function(data) {
-	var keyword1 = data.one;
-	var keyword2 = data.key;
+	//make api call here. Change it to your api call
+	var uri = "http://echo.jsontest.com/key/value/one/two";
+		$.getJSON(uri, function(data) {
+			var keyword1 = data.one;
+			var keyword2 = data.key;
 
-$(function () {
-	$(".keyword1").empty()
-	$(".keyword2").empty()
-	//$(".keyword3").empty()
-	//$(".keyword4").empty()
-	showText(".keyword1", keyword1, 0, 200);
-	showText(".keyword2", keyword2, 0, 200);
-	//showText(".keyword3", keyword3, 0, 200);
-	//showText(".keyword4", keyword4, 0, 200);
-
-});
-
+	$(function () {
+		$(".keyword1").empty()
+		$(".keyword2").empty()
+		//$(".keyword3").empty()
+		//$(".keyword4").empty()
+		//call showtext function
+		showText(".keyword1", keyword1, 0, 200);
+		showText(".keyword2", keyword2, 0, 200);
+		//showText(".keyword3", keyword3, 0, 200);
+		//showText(".keyword4", keyword4, 0, 200);
+	});
 })
 }, 5000);//end timer
 })//end of script
