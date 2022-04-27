@@ -1,7 +1,7 @@
 # internal trend report
-Create your own Google Hot Trends Visualizer and display data from your organization yourself. Code is ready, only need to input your data and you're set.
+create your own google hot trends visualizer and display data from your organization yourself. code is ready, only need to input your data and you're set.
 
-Possible use cases:
-Searches on your website (from Google Analytics),
-Top four purchased items in a webstore,
-Top traveling destinations right now.
+possible use cases:
+searches on your website (from Google Analytics),
+top four purchased items in a webstore,
+top traveling destinations right now.
