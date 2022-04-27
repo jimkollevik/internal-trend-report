@@ -24,7 +24,7 @@ $(document).ready(function() {
 	}
 
 	//make api call here. Change it to your api call
-	var uri = "https://jimkollevik.github.io/trendsDigest/trendReport.json";
+	var uri = "https://jimkollevik.github.io/internal-trend-report/destinations.json";
 		$.getJSON(uri, function(data) {
 			var keyword1 = data.first;
 			var keyword2 = data.second;
